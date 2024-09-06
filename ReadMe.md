@@ -47,7 +47,7 @@ A Chrome extension that enables Picture-in-Picture (PiP) mode for video content 
 
 ## Video Demo
 
-![Video Demo](https://drive.google.com/file/d/1jVEQyxTQvTGXeRU9jR2le1J0MPQssL-u/view?usp=sharing)
+![Video Demo](https://drive.google.com/file/d/1h8gOenKRM6yUEkmSOHXYQ0uvzIaSPxsa/view?usp=sharing)
 
 You can also watch a demo of the extension in action here: [Video Demo](URL_TO_YOUR_VIDEO)
 
