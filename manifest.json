@@ -27,10 +27,10 @@
   "commands": {
     "_execute_action": {
       "suggested_key": {
-        "windows": "Ctrl + Space",
-        "mac": "Command + Space",
-        "chromeos": "Ctrl + Space",
-        "linux": "Ctrl + Space"
+        "windows": "Alt + P",
+        "mac": "Alt + P",
+        "chromeos": "Alt + P",
+        "linux": "Alt + P"
       }
     }
   },
