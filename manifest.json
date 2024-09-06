@@ -1,0 +1,45 @@
+{
+  "name": "Picture-in-Picture Viewer",
+  "short_name": "PiP Viewer",
+  "author": "Aditya234892",
+  "description": "Navigate through tabs and watch video using the Picture-in-Picture API.",
+  "homepage_url": "https://www.example.com",
+  "manifest_version": 3,
+  "offline_enabled": true,
+  "version": "1.0.0",
+  "icons": {
+    "256": "images/icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "256": "images/icon.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["script.js", "images/icon.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "windows": "Ctrl + Space",
+        "mac": "Command + Space",
+        "chromeos": "Ctrl + Space",
+        "linux": "Ctrl + Space"
+      }
+    }
+  },
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
+
+
