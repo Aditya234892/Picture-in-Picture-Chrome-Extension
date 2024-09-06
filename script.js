@@ -1,3 +1,15 @@
+(async () => {
+  const video = findLargestRectangleVideoTag();
+  if (!video) {
+    return;
+  }
+  if (video.hasAttribute("pipEnabled")) {
+    document.exitPictureInPicture();
+    return;
+  }
+  await requestForPIP(video);
+})();
+
 function findLargestRectangleVideoTag() {
   const videosArray = Array.from(document.querySelectorAll("video"));
   // console.log(document.querySelectorAll("video"));
@@ -25,37 +37,5 @@ function findLargestRectangleVideoTag() {
 
 async function requestForPIP(video) {
   await video.requestPictureInPicture();  
-  video.setAttribute("pipEnabled", true);
-  video.addEventListener(
-    "leavepictureinpicture",
-    (event) => {
-      video.removeAttribute("pipEnabled");
-    });
-  const resizeOb = new ResizeObserver(checkAndUpdatePIPVideo);
-  resizeOb.observe(video);
 }
 
-function checkAndUpdatePIPVideo(entries, observer) { //This fucntion is used for If a suitable video is found and it’s not already in PiP mode, it switches the PiP to this new video. Without ResizeObserver, once a video enters PiP mode, it will stay in PiP mode even if the size of the window or video changes, or if a larger video becomes available. This means you won’t be dynamically switching PiP mode to the largest available video as the viewport changes.
-  const observedVideo = entries[0].target; 
-  if (!document.querySelector("[pipEnabled]")) {
-    observer.unobserve(observedVideo);
-    return;
-  }
-  const video = findLargestRectangleVideoTag();
-  if (video && !video.hasAttribute("pipEnabled")) {
-    observer.unobserve(observedVideo);
-    requestForPIP(video);
-  }
-}
-
-(async () => {
-  const video = findLargestRectangleVideoTag();
-  if (!video) {
-    return;
-  }
-  if (video.hasAttribute("pipEnabled")) {
-    document.exitPictureInPicture();
-    return;
-  }
-  await requestForPIP(video);
-})();
