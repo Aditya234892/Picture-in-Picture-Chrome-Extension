@@ -3,7 +3,7 @@
   "short_name": "PiP Viewer",
   "author": "Aditya234892",
   "description": "Navigate through tabs and watch video using the Picture-in-Picture API.",
-  "homepage_url": "https://www.example.com",
+  "homepage_url": "https://github.com/Aditya234892/Picture-in-Picture-Chrome-Extension.git",
   "manifest_version": 3,
   "offline_enabled": true,
   "version": "1.0.0",
